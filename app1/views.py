@@ -38,7 +38,7 @@ metadata['ProductName'] = metadata['ProductName'].fillna('')
 metadata['features'] = metadata['AccountName'] + metadata['OpptyName']  + metadata['ProductName'] + metadata['Country']
 #Construct the required TF-IDF matrix by fitting and transforming the data
 tfidf_matrix = tfidf.fit_transform(metadata['features'])
-tfidf.get_feature_names()[0:12038]
+tfidf.get_feature_names_out()[0:12038]
 
 # Compute the cosine similarity matrix
 cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
